@@ -35,6 +35,10 @@ body {
     font-size: 3rem;    
 }
 
+.rules{
+    font-size: 2rem;
+}
+
 .disable{
     pointer-events: none;
     opacity: .4;

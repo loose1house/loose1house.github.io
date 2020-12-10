@@ -267,12 +267,13 @@
     var winner_draw = document.getElementById('winner-draw');
     var player_0 = document.getElementById('player-0');
     var player_1 = document.getElementById('player-1');
-    
-    
+    var rules = document.getElementById('rules');
+    var upMenu = document.getElementById('upMenu');
     
     function start(){   
             document.getElementById('table').innerHTML = '';
             document.getElementById('table').classList.remove('disable');
+            upMenu.classList.remove('hide');
             score_0.textContent = '0';
             score_1.textContent = '0';
             winner_0.classList.add('hide');
@@ -285,6 +286,7 @@
             player_1.classList.remove('active');
             score_0.classList.add('active');
             score_1.classList.remove('active');
+            rules.classList.remove('hide');
     
             playBoard = matrix(7,7,0,4);
             boardRandom(playBoard, 0,4); 

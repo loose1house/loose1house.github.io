@@ -11,16 +11,13 @@
 
     </head>
 
-    <body>                 
-        
-       
-
-        <section class="section-steps" id="works">
+    <body>                       
+               <section class="section-steps" id="works">
         <div class="row">
         
             <h2>BUBBLES BATTLE</h2>
             
-            <div class="upMenu">
+            <div class="upMenu hide" id='upMenu'>
             <div class="player active" id="player-0">Player 1-  </div>
             
             <div class="score active" id="score-0">0</div>
@@ -39,7 +36,12 @@
             <div id ='winner-0' class="hide">PLAYER 1 WIN</div>
             <div id ='winner-1' class="hide">PLAYER 2 WIN</div>
           <div id ='winner-draw' class="hide">DRAW</div>
-          <div class="btn-start" onclick = "start()">START</div>
+          <div class="btn-start" onclick = "start()">START</div>         
+          <div class="rules hide" id="rules">
+              *To start the game, move the ball to the center.
+              <br>Balls of the same color located on adjacent fields burst bringing points to the player (2 balls - 2 points, 3 balls - 3 points, 4 balls - 4 points).
+              <br>After the move players switch is happened.
+          </div>      
         </div>
     
         
