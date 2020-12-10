@@ -1,0 +1,287 @@
+/*
+Orange color: #e67e22
+
+*/
+
+
+/* ----------------------------------------------- */
+/* BASIC SETUP */
+/* ----------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background-color: #f4fded;
+    color: #65524d;
+    font-family: 'Lato', 'Arial', sans-serif, 'Modak';
+    font-weight: 300;
+    font-size: 10px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+.upMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 3rem;    
+}
+
+.rules{
+    font-size: 2rem;
+}
+
+.disable{
+    pointer-events: none;
+    opacity: .4;
+}
+
+.player {
+    flex-grow:0;
+    width: 20rem;
+}
+
+.btn-start{
+    text-align: center;       
+    font-size: 5rem;      
+}
+
+.btn-start:hover{
+    text-decoration: underline #e67e22;
+}
+
+.winner {
+    text-align: center;           
+    font-size: 5rem;    
+    animation: winner .6s;    
+}
+
+.hide {
+    opacity:0;
+}
+
+
+@keyframes winner {
+    from {transform: 
+         scale(1, 1) }
+     40% {transform: scale(0.75, 1.25)}
+     50% {transform: scale(1.15, 0.85)}
+     65% {transform: scale(.95, 1.05)}
+     75% {transform: scale(1.05, .95)}
+     to  {transform: scale(1, 1)}  
+  }
+
+.active{
+    color: #e67e22;
+    transform: scale(1.2);
+}
+
+.score{
+    width: 3rem;    
+}
+
+
+.color_-1 {
+    opacity: 0;
+    transition: all 2s;
+}
+
+.color_-1:hover {
+    border: solid .001rem #555; 
+    opacity: .4;
+}
+
+.color_0 {
+   background-color: #f46036;
+   transition: all 2s;
+}
+.color_1 {
+    background-color: #615451;
+    transition: all 2s;
+}
+.color_2 {
+    background-color: #beea1f;
+    transition: all 2s;
+}
+.color_3 {
+    background-color: #f18f01;
+    transition: all 2s;
+}
+.color_4 {
+    background-color: #7fc29b;
+    transition: all 2s;
+}
+
+.border {
+    border: .1rem solid rgba(255, 238, 0, 0.747);
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;    
+    color: rgba(85, 85, 85, 0.322);
+}
+
+.td{
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    transition: all 0.24s;
+    margin-top: 1rem;
+}
+
+.tr{
+    width: 5rem;
+    margin: 0 1rem ; 
+    height: 5rem;
+    border-radius: 3rem;
+    transition: all .2s ease   
+}
+   
+.tr:hover {
+    transform: scale(1.1, 0.95)
+}
+     
+ 
+.jelly {
+    animation: jellySelect .6s;
+}
+
+@keyframes jellySelect {
+  from {transform: scale(1.1, 0.75) }
+   40% {transform: scale(0.75, 1.25)}
+   50% {transform: scale(1.15, 0.85)}
+   65% {transform: scale(.95, 1.05)}
+   75% {transform: scale(1.05, .95)}
+   to  {transform: scale(1, 1)}  
+}
+
+.blow {
+    animation: blowbubble .3s;
+}
+
+@keyframes blowbubble {
+        40% {transform: scale(1.1)}
+        60% {transform: scale(1.2)}
+        80% {transform: scale(1.3)}
+        100% {transform: scale(1.4)}
+    }
+
+
+/*Шарики */
+.ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%); }
+    .ball:before {
+      content: "";
+      position: absolute;
+      top: 1%;
+      left: 5%;
+      width: 90%;
+      height: 90%;
+      border-radius: 100%;
+      background: radial-gradient(circle at top, white, rgba(255, 255, 255, 0) 58%);
+      -webkit-filter: blur(5px);
+      filter: blur(5px);
+      z-index: 2; }
+    .ball:after {
+      content: "";
+      position: absolute;
+      display: none;
+      top: 5%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      border-radius: 100%;
+      -webkit-filter: blur(1px);
+      filter: blur(1px);
+      z-index: 2;
+      -webkit-transform: rotateZ(-30deg);
+      transform: rotateZ(-30deg); }
+    .ball .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+      -webkit-transform: rotateX(90deg) translateZ(-160px);
+      transform: rotateX(90deg) translateZ(-160px);
+      z-index: 1; }
+    .ball.plain {
+      background: black; }
+      .ball.plain:before, .ball.plain:after {
+        display: none; }
+    .ball.bubble {
+      background: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.1), rgba(240, 245, 255, 0.1) 0%, rgba(225, 238, 255, 0.1) 0%, rgba(43, 130, 255, 0.1)); /*тут исправляем прозрачность*/
+      }
+      .ball.bubble:before {
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        height: 80%;
+        width: 40%;
+        background: radial-gradient(circle at 130% 130%, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+        -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
+        transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg); }
+      .ball.bubble:after {
+        display: block;
+        background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%); 
+}
+
+.tr:hover {    
+    text-decoration: underline;
+    text-decoration-color: #e67e22;
+    /*text-shadow: .1rem 0 .01rem #e67e22;*/
+    /* border-bottom: .1rem solid #e67e22;*/
+    transition: all 0.2s;
+}
+
+.row {
+    display: flex column;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* ----- HEADINGS ----- */
+
+h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #555;
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after {
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+

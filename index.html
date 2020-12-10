@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BUBBLES BATTLE</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+        
+
+    </head>
+
+    <body>                       
+               <section class="section-steps" id="works">
+        <div class="row">
+        
+            <h2>BUBBLES BATTLE</h2>
+            
+            <div class="upMenu hide" id='upMenu'>
+            <div class="player active" id="player-0">Player 1-  </div>
+            
+            <div class="score active" id="score-0">0</div>
+            <div class="score">:</div>
+            <div class="score" id="score-1">0 </div>
+            
+            <div class="player" id="player-1">- Player 2</div>
+            </div>
+        </div>
+        
+        <div class='row'>
+          
+                <div class="table" id="table"></div>
+            
+            <div id ='winner-0' class="hide">PLAYER 1 WIN</div>
+            <div id ='winner-0' class="hide">PLAYER 1 WIN</div>
+            <div id ='winner-1' class="hide">PLAYER 2 WIN</div>
+          <div id ='winner-draw' class="hide">DRAW</div>
+          <div class="btn-start" onclick = "start()">START</div>         
+          <div class="rules hide" id="rules">
+              *To start the game, move the ball to the center.
+              <br>Balls of the same color located on adjacent fields burst bringing points to the player (2 balls - 2 points, 3 balls - 3 points, 4 balls - 4 points).
+              <br>After the move players switch is happened.
+          </div>      
+        </div>
+    
+        
+    </section>
+    
+    </body>
+
+    <script src="script.js"></script>
+</html>
